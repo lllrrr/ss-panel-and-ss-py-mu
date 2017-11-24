@@ -1,24 +1,42 @@
 （支持流量计费、按时间计费、支付宝付款）
 
 除去lnmp的安装时间，仅需3分钟即可完成。
-# [ss-panel 一键脚本](https://91vps.us/2017/05/26/ss-panel/)
-```
-wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel_node.sh && chmod +x ss-panel_node.sh && bash ss-panel_node.sh
-```
-# [ss-panel v3 mod魔改版一键脚本](https://91vps.us/2017/05/27/ss-panel-v3-mod/)
+# 联系方式
+[TG讨论组](https://t.me/feiyangss)
 
+# 代码部分
+
+##### 要求centos 7 x64
+
+### ss-panel mod魔改版一键脚本
 ```
+yum install screen wget -y &&screen -S ss 
 wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel-v3-mod.sh && chmod +x ss-panel-v3-mod.sh && bash ss-panel-v3-mod.sh
+
 ```
-选项都差不多,直接输入2安装即可
+### ss-panel v3一键脚本
+```
+yum install screen wget -y &&screen -S ss
+wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel_node.sh && chmod +x ss-panel_node.sh && bash ss-panel_node.sh
 
-![](http://cdn.mmmxcc.cn/blog/20170509/214909086.png)
-![](http://cdn.mmmxcc.cn/blog/20170510/101919599.png)
-![](https://ooo.0o0.ooo/2017/05/27/592934ed4e208.jpg)
+```
 
+选项都差不多,直接输入1安装即可
 
-默认账号：ss@91vps.club
+默认账号：91vps
 
 默认密码：91vps
 
-详情请[点击查看](https://91vps.us/category/shadowsocks/ss-build/)，还有一个shadowsocks-manager一键安装脚本，自己看吧。
+# 关于
+码农一只，欢迎打赏。
+本程序主要用于：
+
+- 企业内部局域网搭建，所以信息均处于高度加密下。比VPN更能满足企业安全需要。
+- 海外留学生回国线路搭建。
+- 自用的游戏加速，信息搜索。
+
+**切勿用于商业用途，可能会触犯法律**
+
+作者接定制功能、页面、脚本、游戏加速器，活儿保证让你满意~
+
+![](http://cdn.mmmxcc.cn/59ae59a7e12bf.jpg)

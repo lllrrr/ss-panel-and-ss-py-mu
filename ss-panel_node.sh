@@ -57,7 +57,6 @@ install_ss_py_mu(){
 	echo "# One click Install Shadowsocks-Python-Manyuser             #"
 	echo "# Github: https://github.com/mmmwhy/ss-panel-and-ss-py-mu   #"
 	echo "# Author: 91vps                                             #"
-	echo "# https://91vps.us/2017/05/26/ss-panel/                     #"
 	echo "#############################################################"
 	echo
 	#Check Root
@@ -89,21 +88,24 @@ install_ss_py_mu(){
 		if [[ ${release} = "centos" ]]; then
 			echo "Will install below software on your centos system:"
 			yum install git lsof -y
-			yum install python-setuptools -y 
+			yum -y install python-setuptools  
+			curl https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/get-pip.py -o get-pip.py
+			python get-pip.py
+			rm -rf python get-pip.py
 			yum -y groupinstall "Development Tools"
-			wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-1.0.13.tar.gz
+			wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.13.tar.gz
 			tar xf libsodium-1.0.13.tar.gz && cd libsodium-1.0.13
 			./configure && make -j2 && make install
 			echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
 			ldconfig
 			yum install python-setuptools
-			easy_install supervisor
+			pip install supervisor
 		else
 		apt-get update -y
 		apt-get install supervisor -y
 		apt-get install git -y
 		apt-get install build-essential -y
-		wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-1.0.13.tar.gz
+		wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.13.tar.gz
 		tar xf libsodium-1.0.13.tar.gz && cd libsodium-1.0.13
 		./configure && make -j2 && make install
 		echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
@@ -170,7 +172,7 @@ one_click_all(){
 			yum install git lsof -y
 			yum install python-setuptools -y 
 			yum -y groupinstall "Development Tools" -y
-			wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-1.0.13.tar.gz
+			wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.13.tar.gz
 			tar xf libsodium-1.0.13.tar.gz && cd libsodium-1.0.13
 			./configure && make -j2 && make install
 			echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
@@ -182,7 +184,7 @@ one_click_all(){
 		apt-get install supervisor -y
 		apt-get install git -y
 		apt-get install build-essential -y
-		wget https://github.com/jedisct1/libsodium/releases/download/1.0.13/libsodium-1.0.13.tar.gz
+		wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.13.tar.gz
 		tar xf libsodium-1.0.13.tar.gz && cd libsodium-1.0.13
 		./configure && make -j2 && make install
 		echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
@@ -214,9 +216,9 @@ one_click_all(){
 	echo ""
 	echo "#############################################################"
 	echo "# 安装完成，登录http://${IPAddress}看看吧~                  #"
+	echo "# 用户名: 91vps 密码: 91vps                                 #"
 	echo "# Github: https://github.com/mmmwhy/ss-panel-and-ss-py-mu   #"
 	echo "# Author: 91vps                                             #"
-	echo "# Blog: https://91vps.us/2017/05/26/ss-panel/               #"
 	echo "#############################################################"
 }
 
@@ -226,7 +228,6 @@ echo "#############################################################"
 echo "# One click Install SS-panel and Shadowsocks-Py-Mu          #"
 echo "# Github: https://github.com/mmmwhy/ss-panel-and-ss-py-mu   #"
 echo "# Author: 91vps                                             #"
-echo "# https://91vps.us/2017/05/26/ss-panel/                     #"
 echo "# Please choose the server you want                         #"
 echo "# 1  SS-panel + SS-node One click Install                   #"
 echo "# 2  SS-panel One click Install                             #"
